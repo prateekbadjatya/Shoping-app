@@ -96,7 +96,7 @@ const NavContainer = styled.nav`
         text-transform: capitalize;
         .nav-link {
           color: var(--clr-grey-3);
-          font-size: 1rem;
+          font-size: 1.5rem;
           text-transform: capitalize;
           letter-spacing: var(--spacing);
           padding: 0.5rem;
