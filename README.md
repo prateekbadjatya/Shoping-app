@@ -1,5 +1,10 @@
 ## Notes
 
+**Application is under development**
+
+**Application live on: https://prateekshoppingapp.netlify.app/ **
+
+
 #### Older React Version
 
 ```
