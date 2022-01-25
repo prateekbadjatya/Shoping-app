@@ -49,6 +49,29 @@ const products_reducer = (state, action) => {
       products_loading: false
     };
   }
+  // SIngle Product
+  if (action.type === GET_SINGLE_PRODUCT_ERROR) {
+    return {
+      ...state,
+      single_product_loading: false,
+      single_product_error: true
+    };
+  }
+  if (action.type === GET_SINGLE_PRODUCT_BEGIN) {
+    return {
+      ...state,
+      single_product_loading: true
+    };
+  }
+
+  if (action.type === GET_SINGLE_PRODUCT_SUCCESS) {
+    return {
+      ...state,
+      single_products: action.payload,
+      single_product_loading: false,
+      single_product_error: false
+    };
+  }
   throw new Error(`No Matching "${action.type}" - action type`);
 };
 
