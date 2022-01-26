@@ -1,19 +1,40 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-const ProductImages = () => {
-  return <h4>product images</h4>
-}
+const ProductImages = ({ images = [{ url: '' }] }) => {
+  // console.log(images);
+  const [main, setMain] = useState(images[0]);
+  // const [mainImageId, setIsimageActive] = useState
+
+  return (
+    <Wrapper>
+      <img className="main-image" src={main.url} alt="main image" />
+      <div className="gallery">
+        {images.map((image, index) => {
+          return (
+            <img
+              key={index}
+              onClick={() => setMain(images[index])}
+              src={image.url}
+              alt="gallery image"
+              className={main && main.id === image.id ? 'active' : null}
+            />
+          );
+        })}
+      </div>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
-  .main {
+  .main-image {
     height: 600px;
   }
   img {
     width: 100%;
+    object-fit: cover;
     display: block;
     border-radius: var(--radius);
-    object-fit: cover;
   }
   .gallery {
     margin-top: 1rem;
@@ -48,6 +69,6 @@ const Wrapper = styled.section`
       }
     }
   }
-`
+`;
 
-export default ProductImages
+export default ProductImages;
