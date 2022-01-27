@@ -57,7 +57,7 @@ const SidebarContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     padding: 1rem 1.5rem;
     img {
-      height: 45px;
+      height: 98px;
       justify-self: center;
     }
   }

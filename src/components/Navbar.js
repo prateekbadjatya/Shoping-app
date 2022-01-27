@@ -69,7 +69,7 @@ const NavContainer = styled.nav`
       justify-self: end;
     }
     .nav-logo {
-      width: 175px;
+      width: 56px;
     }
   }
   .nav-links {
