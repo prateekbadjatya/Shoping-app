@@ -9,7 +9,7 @@ import CartButtons from './CartButtons';
 import { useUserContext } from '../context/user_context';
 
 const Sidebar = () => {
-  console.log('useProductsContext', useProductsContext());
+  // console.log('useProductsContext', useProductsContext());
   // const isSideBarOpen = true;
   const { openSideBar, closeSideBar, isSideBarOpen } = useProductsContext();
   return (

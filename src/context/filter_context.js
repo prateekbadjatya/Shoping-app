@@ -31,6 +31,14 @@ export const FilterProvider = ({ children }) => {
       payload: products
     });
   }, [products]);
+  //-------Sort product-----------------
+  useEffect(() => {
+    dispatch({
+      type: SORT_PRODUCTS
+    });
+  }, [products, state.sort]);
+  //------------------------
+
   const setGridView = () => {
     dispatch({
       type: SET_GRIDVIEW

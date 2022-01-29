@@ -11,6 +11,7 @@ const Sort = () => {
     updateSort,
     sort
   } = useFilterContext();
+
   return (
     <Wrapper>
       <div className="btn-container">
