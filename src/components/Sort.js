@@ -1,11 +1,54 @@
-import React from 'react'
-import { useFilterContext } from '../context/filter_context'
-import { BsFillGridFill, BsList } from 'react-icons/bs'
-import styled from 'styled-components'
+import React from 'react';
+import { useFilterContext } from '../context/filter_context';
+import { BsFillGridFill, BsList } from 'react-icons/bs';
+import styled from 'styled-components';
 const Sort = () => {
-  return <h4>sort </h4>
-}
-
+  const {
+    grid_view,
+    setGridView,
+    setListView,
+    filtered_products,
+    updateSort,
+    sort
+  } = useFilterContext();
+  return (
+    <Wrapper>
+      <div className="btn-container">
+        <button
+          type="button"
+          onClick={() => setGridView()}
+          className={`${grid_view ? 'active-btn' : null}`}
+        >
+          <BsFillGridFill />
+        </button>
+        <button
+          onClick={() => setListView()}
+          type="button"
+          className={`${!grid_view ? 'active-btn' : null}`}
+        >
+          <BsList />
+        </button>
+      </div>
+      <p>{filtered_products.length || 0} Products Found</p>
+      <hr />
+      <form>
+        <label htmlFor="sort">Sort BY</label>
+        <select
+          value={sort}
+          onChange={e => updateSort(e)}
+          name="sort"
+          id="sort"
+          className="sort-input"
+        >
+          <option value="price-lowest">Price (lowest)</option>
+          <option value="price-highest">Price (highest)</option>
+          <option value="name-a">Name (a-z)</option>
+          <option value="name-z">Name (z-a)</option>
+        </select>
+      </form>
+    </Wrapper>
+  );
+};
 const Wrapper = styled.section`
   display: grid;
   grid-template-columns: auto auto 1fr auto;
@@ -51,7 +94,7 @@ const Wrapper = styled.section`
         font-size: 1rem;
       }
     }
-    .active {
+    .active-btn {
       background: var(--clr-black);
       color: var(--clr-white);
     }
@@ -67,6 +110,6 @@ const Wrapper = styled.section`
     font-size: 1rem;
     text-transform: capitalize;
   }
-`
+`;
 
-export default Sort
+export default Sort;
