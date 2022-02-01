@@ -38,7 +38,7 @@ const Wrapper = styled.article`
     display: none;
   }
   display: grid;
-  grid-template-columns: 200px auto auto;
+  grid-template-columns: 200px auto auto auto;
   grid-template-rows: 75px;
   gap: 3rem 1rem;
   justify-items: center;
@@ -51,6 +51,13 @@ const Wrapper = styled.article`
     align-items: center;
     text-align: left;
     gap: 1rem;
+  }
+  .item-amount-button {
+    width: 75px;
+    h2 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
   }
   img {
     width: 100%;
@@ -82,6 +89,7 @@ const Wrapper = styled.article`
       border-radius: var(--radius);
     }
   }
+
   .price-small {
     color: var(--clr-primary-5);
   }
@@ -118,6 +126,13 @@ const Wrapper = styled.article`
       color: var(--clr-grey-5);
       font-weight: 400;
       font-size: 1rem;
+    }
+    .item-amount-button {
+      width: 140px;
+      h2 {
+        font-size: 2.5rem;
+        margin: 0;
+      }
     }
     .price-small {
       display: none;

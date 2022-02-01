@@ -19,7 +19,11 @@ const CartContent = () => {
         <Link to="/products" className="link-btn">
           Continue Shopping
         </Link>
-        <Link to="/" className="link-btn clear-btn" onClick={() => clearCart}>
+        <Link
+          to="/cart"
+          className="link-btn clear-btn"
+          onClick={() => clearCart()}
+        >
           Clear cart
         </Link>
       </div>

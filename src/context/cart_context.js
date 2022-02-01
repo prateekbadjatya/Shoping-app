@@ -33,11 +33,21 @@ export const CartProvider = ({ children }) => {
       payload: { id, color, amount, product }
     });
   };
-  const removeItem = id => {};
+  const removeItem = id => {
+    dispatch({
+      type: REMOVE_CART_ITEM,
+      payload: id
+    });
+  };
 
   const toggleAmount = (id, value) => {};
 
-  const clearCart = () => {};
+  const clearCart = () => {
+    console.log('hey');
+    dispatch({
+      type: CLEAR_CART
+    });
+  };
 
   const countCartTotal = () => {};
 

@@ -8,6 +8,7 @@ import {
 import { ConsoleWriter } from 'istanbul-lib-report';
 
 const cart_reducer = (state, action) => {
+  // ------------------
   if (action.type === 'ADD_TO_CART') {
     const { id, color, amount, product } = action.payload;
     let tempItem = [];
@@ -41,6 +42,17 @@ const cart_reducer = (state, action) => {
       };
       return { ...state, cart: [...state.cart, newItem] };
     }
+  }
+  //----------------------------
+  if (action.type === CLEAR_CART) {
+    localStorage.setItem('cart', null);
+    return { ...state, cart: [] };
+  }
+  //-------------------------------------------
+  if (action.type === REMOVE_CART_ITEM) {
+    let id = action.payload;
+    let cart = state.cart.filter(c => c.id !== id);
+    return { ...state, cart };
   }
   throw new Error(`No Matching "${action.type}" - action type`);
 };

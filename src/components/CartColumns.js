@@ -18,12 +18,13 @@ const CartColumns = () => {
 
 const Wrapper = styled.div`
   display: none;
-  @media (min-width: 776px) {
+  @media (min-width: 992px) {
     display: block;
     .content {
       display: grid;
       grid-template-columns: 316px 1fr 1fr 1fr auto;
       margin-top: 2rem;
+      column-gap: 7rem;
       h5 {
         color: var(--clr-grey-5);
         font-weight: 400;
