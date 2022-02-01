@@ -18,11 +18,12 @@ const CartItem = ({ id, color, amount, name, image, price, max }) => {
           <p className="color">
             color :<span style={{ backgroundColor: color }}></span>
           </p>
+          <h5 className="price-small">{formatPrice(price)}</h5>
         </div>
       </div>
       <h5 className="price">{formatPrice(price)}</h5>
       <AmountButtons amount={amount} increase={increase} decrease={decrease} />
-      <h5>{formatPrice(price * amount)}</h5>
+      <h5 className="subtotal">{formatPrice(price * amount)}</h5>
       <button className="remove-btn" onClick={() => removeItem(id)}>
         <FaTrash />
       </button>
@@ -38,7 +39,7 @@ const Wrapper = styled.article`
     display: none;
   }
   display: grid;
-  grid-template-columns: 200px auto auto auto;
+  grid-template-columns: 200px auto auto;
   grid-template-rows: 75px;
   gap: 3rem 1rem;
   justify-items: center;
@@ -51,6 +52,12 @@ const Wrapper = styled.article`
     align-items: center;
     text-align: left;
     gap: 1rem;
+    .price {
+      display: block;
+    }
+  }
+  .external-price {
+    display: none;
   }
   .item-amount-button {
     width: 75px;
@@ -166,6 +173,9 @@ const Wrapper = styled.article`
       align-items: center;
       gap: 1rem;
       text-align: left;
+      .price {
+        display: none;
+      }
     }
     .amount-btns {
       width: 100px;
