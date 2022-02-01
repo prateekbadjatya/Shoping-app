@@ -1,9 +1,20 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const CartColumns = () => {
-  return <h4>cart columns</h4>
-}
+  return (
+    <Wrapper>
+      <div className="content">
+        <h5>Item</h5>
+        <h5>Price</h5>
+        <h5>Qunaitity</h5>
+        <h5>Subtotal</h5>
+        <span></span>
+      </div>
+      <hr />
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   display: none;
@@ -12,23 +23,22 @@ const Wrapper = styled.div`
     .content {
       display: grid;
       grid-template-columns: 316px 1fr 1fr 1fr auto;
-      justify-items: center;
-      column-gap: 1rem;
+      margin-top: 2rem;
       h5 {
         color: var(--clr-grey-5);
         font-weight: 400;
       }
     }
-
-    span {
-      width: 2rem;
-      height: 2rem;
-    }
     hr {
       margin-top: 1rem;
       margin-bottom: 3rem;
     }
+    span {
+        span {
+      width: 2rem;
+      height: 2rem;
+    }
   }
-`
+`;
 
-export default CartColumns
+export default CartColumns;
