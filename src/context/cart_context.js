@@ -40,7 +40,12 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  const toggleAmount = (id, value) => {};
+  const toggleAmount = (id, value) => {
+    dispatch({
+      type: TOGGLE_CART_ITEM_AMOUNT,
+      payload: { id, value }
+    });
+  };
 
   const clearCart = () => {
     console.log('hey');
@@ -52,6 +57,9 @@ export const CartProvider = ({ children }) => {
   const countCartTotal = () => {};
 
   useEffect(() => {
+    dispatch({
+      type: COUNT_CART_TOTALS
+    });
     localStorage.setItem('cart', JSON.stringify(state.cart));
   }, [state.cart]);
   return (
