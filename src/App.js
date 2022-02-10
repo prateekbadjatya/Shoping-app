@@ -32,12 +32,12 @@ const App = () => {
           <Route exact path="/cart">
             <Cart />
           </Route>
-          <Route exact path="/checkout">
+          {/* <Route exact path="/checkout">
             <Checkout />
-          </Route>
-          <Route exact path="/private">
-            <Private />
-          </Route>
+          </Route> */}
+          <Private exact path="/checkout">
+            <Checkout />
+          </Private>
           <Route path="*">
             <Error />
           </Route>
